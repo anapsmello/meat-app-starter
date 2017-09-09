@@ -2,7 +2,7 @@
 
   <mt-menu-item
      *ngFor="let item of menu | async"
-     [menuItem]="item" (add)="addMenuItem($event)">
+     [menuItem]="item" (click)="addMenuItem(item)">
   </mt-menu-item>
 
 </div>

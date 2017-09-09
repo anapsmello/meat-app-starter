@@ -15,6 +15,7 @@ export class ReviewsComponent implements OnInit {
   constructor(private restaurantsService: RestaurantsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.route.parent.snapshot.params['id'])
     this.reviews = this.restaurantsService.reviewsOfRestaurant(this.route.parent.snapshot.params['id'])
   }
 

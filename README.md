@@ -94,3 +94,13 @@ CSS3 TRANSITIONS
 w3.org/TR/css3-transitions/#animable-properties
 
 CSS3 ANIMATIONS
+
+## Construindo a aplicação
+# usa configurações de desenvolvimento
+ng build
+`gera arquivos .map, que permite debugar
+ também gera erros javascript (como falta de propriedades), que não são geradas ao executar ng serve
+`
+
+# usa configurações de produção
+ng build --prod

@@ -88,3 +88,9 @@ Dependências dos pacotes que devem ficar em package.json:
 ## Créditos
 
 Todas as imagens usadas na aplicação são pertencentes a freepik.com
+
+## specs implementadas por animations
+CSS3 TRANSITIONS
+w3.org/TR/css3-transitions/#animable-properties
+
+CSS3 ANIMATIONS

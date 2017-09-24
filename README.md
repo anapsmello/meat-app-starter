@@ -131,3 +131,6 @@ Levar o conteúdo da pasta dist para a pasta e colocar na pasta do apache onde t
 - ao fazer isso, a aplicação fica inacessível
 - tentando acessar com /meat, ainda assim dá 404
 - Por que? No index.html, temos o <base href="/">
+- o router usa o base href para montar as rotas
+- passar o parâmetro para o build:
+>> ng build --prod --bh=/meat/

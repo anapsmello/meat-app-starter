@@ -104,3 +104,7 @@ ng build
 
 # usa configurações de produção
 ng build --prod
+
+## Publicando no Apache HTTP
+# estratégia de hash (não precisa configurar nada)
+Levar o conteúdo da pasta dist para a pasta e colocar na pasta do apache onde tem o index.html

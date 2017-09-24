@@ -125,3 +125,9 @@ Levar o conteúdo da pasta dist para a pasta e colocar na pasta do apache onde t
 - remover as regras que tinham sido incluídas
 - criar um arquivo .htaccess e colar essas regras nele.
 - colar esse arquivo na pasta do apache onde estão os arquivos da aplicação
+
+# Modificando o base-href para Deploys em Subdiretórios
+- criar uma pasta (meat) e mover os arquivos da distribuição para ela
+- ao fazer isso, a aplicação fica inacessível
+- tentando acessar com /meat, ainda assim dá 404
+- Por que? No index.html, temos o <base href="/">

@@ -118,4 +118,10 @@ Levar o conteúdo da pasta dist para a pasta e colocar na pasta do apache onde t
 - mostra o passo a passo do site do angular io (seção production servers)
 -- nesse link, recomenda colocar a configuração no arquivo htaccess, mas na doc do apache, manda colocar no arquivo principal (httpd.conf)
 -startar o apache
-- ativar o módulo rewrite_module no arquivo httpd.configura
+- ativar o módulo rewrite_module no arquivo httpd.config
+
+## estratégia de camnhaos usando o arquivo htaccess (quando não se tem acesso ao httpd.config)
+- no arquivo de configuração, alterar a propriedade 'AllowOverride' para All
+- remover as regras que tinham sido incluídas
+- criar um arquivo .htaccess e colar essas regras nele.
+- colar esse arquivo na pasta do apache onde estão os arquivos da aplicação

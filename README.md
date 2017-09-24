@@ -107,4 +107,15 @@ ng build --prod
 
 ## Publicando no Apache HTTP
 # estratégia de hash (não precisa configurar nada)
+- precisa do provider {provide: LocationStrategy, useClass: HashLocationStrategy}
 Levar o conteúdo da pasta dist para a pasta e colocar na pasta do apache onde tem o index.html
+
+# estratégia de caminho
+- remover o provider {provide: LocationStrategy, useClass: HashLocationStrategy}
+- fazer novo build de produção
+- deletar os arquivos (da instalação por hash)
+- colar o conteúdo do dist gerado no build
+- mostra o passo a passo do site do angular io (seção production servers)
+-- nesse link, recomenda colocar a configuração no arquivo htaccess, mas na doc do apache, manda colocar no arquivo principal (httpd.conf)
+-startar o apache
+- ativar o módulo rewrite_module no arquivo httpd.configura

@@ -3,6 +3,9 @@ import {trigger, state, style, transition, animate} from '@angular/animations'
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms'
 
 import 'rxjs/add/operator/switchMap'
+import 'rxjs/add/operator/do'
+import 'rxjs/add/operator/debounceTime'
+import 'rxjs/add/operator/distinctUntilChanged'
 
 import {Restaurant} from './restaurant/restaurant.model'
 import {RestaurantsService} from './restaurants.service'
@@ -41,7 +44,10 @@ export class RestaurantsComponent implements OnInit {
       searchControl: this.searchControl
     })
 
-    this.searchControl.valueChanges.switchMap(searchTerm => this.restaurantsService.restaurants(searchTerm)).subscribe(restaurants => this.restaurants = restaurants)
+    this.searchControl.valueChanges
+    .debounceTime(500) // só faz a busca após 500ms entre os eventos
+    .distinctUntilChanged() // só pesquisa se mudar a string
+    .switchMap(searchTerm => this.restaurantsService.restaurants(searchTerm)).subscribe(restaurants => this.restaurants = restaurants) //switchMap faz o unsubscribe do evento anterior (se demorasse entre uma req e outra, não teria problema)
 
     this.restaurantsService.restaurants().subscribe(restaurants => this.restaurants = restaurants)
     }
